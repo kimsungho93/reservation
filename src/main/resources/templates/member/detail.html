@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 정보</title>
+    <style>
+        .detail table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .detail table th, .detail table td {
+            border: solid 1px #000;
+        }
+
+    </style>
+</head>
+<body>
+      <h1>회원 정보</h1>
+      <div th:replace="/fragments/layout.html :: fragment-body-menu"></div>
+      <div class="detail">
+          <table>
+              <tbody>
+              <tr>
+                  <th>아이디</th>
+                  <td>
+                      <p th:text="${member.userId}"></p>
+                  </td>
+              </tr>
+              <tr>
+                  <th>이름</th>
+                  <td>
+                      <p th:text="${member.userName}"></p>
+                  </td>
+              </tr>
+              <tr>
+                  <th>연락처</th>
+                  <td>
+                      <p th:text="${member.phone}"></p>
+                  </td>
+              </tr>
+
+              <tr>
+                  <th>회원유형</th>
+                  <td>
+                      <p th:text="${member.role}"></p>
+                  </td>
+              </tr>
+
+              </tbody>
+          </table>
+      </div>
+</body>
+</html>

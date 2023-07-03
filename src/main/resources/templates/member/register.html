@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        .registerBox {
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입 페이지</h1>
+    <div th:replace="/fragments/layout.html :: fragment-body-menu"></div>
+    <p>일반 고객은 일반 회원가입으로 매장(점주)께서는 파트너 회원가입으로 회원가입을 바랍니다.</p>
+
+    <div class="registerBox">
+        <a href="/member/normal-form">일반 회원가입</a>
+    </div>
+    <div class="registerBox">
+        <a href="/member/partner-form">파트너 회원가입</a>
+    </div>
+
+</body>
+</html>

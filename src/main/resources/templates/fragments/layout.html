@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+</head>
+<body>
+
+        <header th:fragment="fragment-body-menu">
+            <th:block th:if="${session.loginMember == null}">
+                <div>
+                    <a href="/">홈으로 이동</a>
+                    |
+                    <a href="/member/register">회원가입</a>
+                    |
+                    <a href="/member/detail">회원정보</a>
+                    |
+                    <a href="/course">예약하기</a>
+                    |
+                    <a href="/member/login">로그인</a>
+                    |
+                    <a href="/member/logout">로그아웃</a>
+                </div>
+                <hr/>
+            </th:block>
+
+            <th:block th:if="${session.loginMember} != null">
+                <div>
+                    <a href="/">홈으로 이동</a>
+                    |
+                    <a href="/member/register">회원가입</a>
+                    |
+                    <a th:href="@{/member/detail/(id= ${session.loginMember.id})}">회원정보</a>
+                    |
+                    <a href="/course">예약하기</a>
+                    |
+                    <p style="display: inline-block">[[${session.loginMember.userName}]]님 안녕하세요?</p>
+                    |
+                    <a href="/member/logout">로그아웃</a>
+                </div>
+                <hr/>
+            </th:block>
+        </header>
+
+
+
+
+</body>
+</html>
